@@ -1,7 +1,7 @@
 //* Fetch Address Functionality
 let userLocation = document.getElementById("location");
 userLocation.addEventListener("click",()=>{
-    userLocation.innerHTML = "";
+    userLocation.innerHTML = "Fetching Location..";
     navigator.geolocation.getCurrentPosition((position)=>{
         let latitude = position.coords.latitude;
         let longitude = position.coords.longitude;
