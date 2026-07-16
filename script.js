@@ -14,3 +14,19 @@ userLocation.addEventListener("click",()=>{
         fetchingArea();
     })
 })
+
+//* Fetching Categories
+let fetchCategories = async()=>{
+    let respose = await fetch("https://dummyjson.com/products/categories");
+    let categories = await respose.json();
+    console.log(categories);
+    let categoryItem = document.getElementById("category-items");
+    categories.forEach((category)=>{
+        categoryItem.innerHTML += `
+        <div class="category-card">
+                <div class="category-img">🤍</div>
+                <p class="category-name">${category.name}</p>
+        </div>`        
+    })
+}
+fetchCategories();
