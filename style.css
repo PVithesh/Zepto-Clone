@@ -85,7 +85,7 @@ nav{
 /** Header */
 header{
     padding:5rem 0;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     height: 400px;
     display: flex;
     justify-content: center;
@@ -96,7 +96,7 @@ header{
     height:350px;
     width : 855px;
     border-radius: 15px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
     display: flex;
     overflow: hidden;
@@ -140,14 +140,12 @@ header{
 #category-title{
     flex-basis: 15%;
     padding: 0px 1rem;
-    border: 3px solid black;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 #category-items{
     flex-basis: 85%;
-    border: 3px solid black;
     display: flex ;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -157,7 +155,6 @@ header{
 .category-card{
     height: 6.2rem;
     width: 6.2rem;
-    border: 2px solid red;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -168,12 +165,11 @@ header{
 .category-img{
     height: 3.1rem;
     width: 3.1rem;
-    border: 2px solid blue;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background-color: #ff0000;
+    background-color: #ff6c6cb6;
 }
 
 .category-name{
