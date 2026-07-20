@@ -185,6 +185,7 @@ header{
     align-items: center;
     border-radius: 10px;
     background-color: rgba(0, 0, 255, 0.119);
+    cursor: pointer;
 }
 
 .category-name{
@@ -192,6 +193,7 @@ header{
     font-weight: 600;
     text-align: center;
     word-break: break-all;
+    cursor: pointer;
 }
 
 

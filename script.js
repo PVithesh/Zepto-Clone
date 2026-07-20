@@ -31,17 +31,66 @@ userLocation.addEventListener("click",()=>{
 // }
 // fetchCategories();
 
+// //* Fetch Categories and their Thumbnail Images
+
+// let fetchCategories = async () => {
+//     //^ Fetch Categories
+//     let categoryResponse = await fetch("https://dummyjson.com/products/categories");
+//     let categories = await categoryResponse.json();
+//     //^ Fetch All Products
+//     let productResponse = await fetch("https://dummyjson.com/products?limit=0");
+//     let productData = await productResponse.json();
+//     let categoryItems = document.getElementById("category-items");
+//     categories.forEach((category) => {
+//         //^ Find the first product of this category
+//         let product = productData.products.find(
+//             (p) => p.category === category.slug
+//         );
+//         categoryItems.innerHTML += `
+//             <div class="category-card" >
+//                 <img src="${product.thumbnail}" alt="${category.slug}" class="category-img">
+//                 <p class="category-name">${category.name}</p>
+//             </div>
+//         `;
+//     });
+// };
+// fetchCategories();
+
+// //* Individual Category
+// let categoryCards = document.querySelectorAll(".category-card")
+// console.log(categoryCards)
+
+// categoryCards.forEach((card) =>{
+//     console.log(card)
+//     card.addEventListener("click", ()=>{
+//         let categoryName = card.querySelector("img").alt;
+//         console.log(categoryName)
+//         sessionStorage.setItem("clickedCategory",categoryName);
+//         fetchingIndidualCategoryData();
+//     })
+// })
+
+// async function fetchingIndidualCategoryData() {
+//     let categoryName = sessionStorage.getItem("clickedCategory");
+//     let respose = await fetch(`https://dummyjson.com/products/category/${categoryName}`);
+//     let {products} = await respose.json()
+//     localStorage.setItem("clickedCategoryData",JSON.stringify(products))
+// }
+
+
 //* Fetch Categories and their Thumbnail Images
 
 let fetchCategories = async () => {
     //^ Fetch Categories
     let categoryResponse = await fetch("https://dummyjson.com/products/categories");
     let categories = await categoryResponse.json();
+
     //^ Fetch All Products
     let productResponse = await fetch("https://dummyjson.com/products?limit=0");
     let productData = await productResponse.json();
     let categoryItems = document.getElementById("category-items");
     categories.forEach((category) => {
+
         //^ Find the first product of this category
         let product = productData.products.find(
             (p) => p.category === category.slug
@@ -53,25 +102,27 @@ let fetchCategories = async () => {
             </div>
         `;
     });
+    //* Individual Category Cards
+    let categoryCards = document.querySelectorAll(".category-card");
+    console.log(categoryCards);
+    categoryCards.forEach((card) => {
+        card.addEventListener("click", () => {
+            let categoryName = card.querySelector("img").alt;
+            console.log(categoryName);
+            sessionStorage.setItem("clickedCategory", categoryName);
+            fetchingIndidualCategoryData();
+        });
+    });
 };
 fetchCategories();
 
+
 //* Individual Category
-let categoryCards = document.querySelectorAll(".category-card")
-console.log(categoryCards)
-// categoryCards.forEach((card) =>{
-//     console.log(card)
-//     card.addEventListener("click", ()=>{
-//         let categoryName = card.querySelector("img").alt;
-//         console.log(categoryName)
-//         sessionStorage.setItem("clickedCategory",categoryName);
-//         fetchingIndidualCategoryData();
-//     })
-// })
 
 async function fetchingIndidualCategoryData() {
     let categoryName = sessionStorage.getItem("clickedCategory");
-    let respose = await fetch(`https://dummyjson.com/products/category/${categoryName}`);
-    let {products} = await respose.json()
-    localStorage.setItem("clickedCategoryData",JSON.stringify(products))
+    let response = await fetch(`https://dummyjson.com/products/category/${categoryName}`);
+    let {products} = await response.json();
+    console.log(products);
+    localStorage.setItem("clickedCategoryData", JSON.stringify(products));
 }
