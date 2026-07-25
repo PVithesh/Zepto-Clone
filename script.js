@@ -111,6 +111,9 @@ let fetchCategories = async () => {
             console.log(categoryName);
             sessionStorage.setItem("clickedCategory", categoryName);
             fetchingIndidualCategoryData();
+            setTimeout(() => {
+            location.assign("./Category.html")
+            },2000)
         });
     });
 };

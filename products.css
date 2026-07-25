@@ -15,6 +15,10 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+    z-index: 100
 }
 #nav{
     flex-basis: 50%;
