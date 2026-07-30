@@ -155,7 +155,7 @@ input {
 }
 
 .product-cards {
-  height: 20rem;
+  height: 22rem;
   width: 15rem;
   border-radius: 10px;
   background-color: #fff;
@@ -231,7 +231,7 @@ input {
   margin: 0.3rem 0px;
 }
 .discount-price{
-  font-size: 1rem;
+  font-size: 0.93rem;
   font-weight: 600;
 }
 .actual-price{
@@ -253,6 +253,6 @@ input {
 .ratings{
   /* border: 2px solid red; */
   margin-top: 0.4rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
 }
